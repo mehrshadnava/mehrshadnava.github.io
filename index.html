@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio</title>
+  <meta name="description" content="A software developer's story, told as a sketchbook — work, projects, achievements and life off the keyboard." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3l3.6 7.6 8.4 1-6.2 5.8 1.7 8.3L16 21.5l-7.5 4.2 1.7-8.3L4 11.6l8.4-1z' fill='%23ffd34d' stroke='%231f2a44' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Inter:wght@400;600;800&family=Permanent+Marker&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#origin">Skip to the story</a>
+  <div class="progress" aria-hidden="true"></div>
+  <div class="binding" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="logo sketch" href="#hero" aria-label="Back to the first page"><span data-initials></span></a>
+    <p class="chapter-label sketch" aria-live="polite">Prologue</p>
+    <a class="btn sketch" data-mailto>Say hi →</a>
+  </header>
+
+  <nav class="rail" aria-label="Chapters"></nav>
+
+  <main>
+    <!-- Prologue -->
+    <section id="hero" class="chapter paper" data-num="00" data-title="Prologue">
+      <i class="deco" data-doodle="bolt" style="left:8%;top:18%;--r:-12deg"></i>
+      <i class="deco" data-doodle="brackets" style="left:44%;top:14%;--r:8deg"></i>
+      <i class="deco" data-doodle="gear" style="left:6%;bottom:16%;--r:0deg"></i>
+      <i class="deco" data-doodle="cross" style="right:8%;top:16%;--r:10deg"></i>
+      <i class="deco" data-doodle="target" style="right:42%;bottom:14%;--r:-10deg"></i>
+
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="hero-fade"><span class="kicker">// hello, world. I'm</span></p>
+          <h1 class="hero-title"></h1>
+          <p class="hero-fade"><span class="hero-role"></span></p>
+        </div>
+        <div class="hero-art">
+          <div class="hero-orb" aria-hidden="true"></div>
+          <p class="bubble hand" aria-live="polite"></p>
+          <button class="me" type="button" aria-label="Poke the doodle me" data-scene="thumb"></button>
+          <p class="note note-hero" data-note="hero"></p>
+        </div>
+      </div>
+      <div class="hero-fade scroll-cue" aria-hidden="true"><span class="hand">scroll to turn the page</span><i data-doodle="arrow"></i></div>
+      <div class="hero-next" aria-hidden="true">
+        <span class="eyebrow">Chapter 01</span>
+        <span class="hero-next-title">Where it all <em>began</em></span>
+      </div>
+    </section>
+
+    <!-- 01 Origin -->
+    <section id="origin" class="chapter kraft" data-num="01" data-title="Origin">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">Chapter 01 · Origin</p>
+          <p class="origin-text"></p>
+        </div>
+        <figure class="art">
+          <div data-scene="laptop-kid"></div>
+          <figcaption class="note" data-note="origin"></figcaption>
+        </figure>
+        <dl class="facts"></dl>
+      </div>
+    </section>
+
+    <!-- 02 Work -->
+    <section id="work" class="chapter paper" data-num="02" data-title="Work">
+      <div class="work-track">
+        <div class="work-intro">
+          <p class="eyebrow">Chapter 02 · Work</p>
+          <h2 class="h2">Where I've <em>worked</em></h2>
+          <div class="art art-desk" data-scene="laptop"></div>
+          <p class="note" data-note="work"></p>
+        </div>
+      </div>
+      <div class="work-rail" aria-hidden="true"><i class="work-progress"></i><i class="pencil">✏️</i></div>
+    </section>
+
+    <!-- 03 Projects -->
+    <section id="projects" class="chapter blueprint" data-num="03" data-title="Projects">
+      <div class="wrap projects-layout">
+        <div>
+          <p class="eyebrow">Chapter 03 · Projects</p>
+          <h2 class="h2">Things I've <em>built</em></h2>
+          <p class="lede">A few favourites from the deck — keep scrolling to deal them out.</p>
+          <ol class="deck-list"></ol>
+          <div class="peek" data-scene="peek"></div>
+          <p class="note" data-note="projects"></p>
+        </div>
+        <div class="deck"></div>
+      </div>
+    </section>
+
+    <!-- 04 Achievements -->
+    <section id="achievements" class="chapter paper" data-num="04" data-title="Achievements">
+      <div class="wrap">
+        <div class="ach-head">
+          <div>
+            <p class="eyebrow reveal">Chapter 04 · Achievements</p>
+            <h2 class="h2 reveal">Milestones <em>along the way</em></h2>
+            <p class="note reveal" data-note="achievements"></p>
+          </div>
+          <div class="art art-trophy reveal" data-scene="trophy"></div>
+        </div>
+        <div class="stats"></div>
+        <ol class="milestones"></ol>
+      </div>
+    </section>
+
+    <!-- 05 Hobbies -->
+    <section id="hobbies" class="chapter steel" data-num="05" data-title="Off the keyboard">
+      <div class="wrap">
+        <p class="eyebrow">Chapter 05 · Off the keyboard</p>
+        <h2 class="h2">When I'm not <em>coding</em></h2>
+        <div class="hobby-grid"></div>
+        <p class="note note-hobbies" data-note="hobbies"></p>
+      </div>
+      <div class="rider" data-scene="bike"></div>
+    </section>
+
+    <!-- 06 Epilogue -->
+    <section id="contact" class="chapter slate" data-num="06" data-title="Epilogue">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow reveal">Chapter 06 · Epilogue</p>
+          <h2 class="h2 reveal">To be <em>continued…</em></h2>
+          <p class="lede reveal contact-heading"></p>
+          <a class="big-mail hand reveal" data-mailto></a>
+          <ul class="socials reveal"></ul>
+          <p class="note reveal" data-note="contact"></p>
+        </div>
+        <figure class="art art-bye reveal">
+          <div data-scene="wave"></div>
+          <div class="plane-wrap" data-scene="plane"></div>
+        </figure>
+      </div>
+      <footer class="footer">
+        <span>© <span data-year></span> <span data-name></span> · drawn &amp; coded by hand</span>
+        <a href="#hero">↑ Read it again</a>
+      </footer>
+    </section>
+  </main>
+
+  <div class="toast hand" role="status" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="doodles.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
