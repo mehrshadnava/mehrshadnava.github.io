@@ -81,6 +81,10 @@ html.motion .on em { background-size: 100% 26%; }
     linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
   background-size: 130px 130px, 130px 130px, 26px 26px, 26px 26px;
 }
+.cardboard {
+  background-color: #c9a46e; --muted: #4a3a24; --pen: #1b3fa8;
+  background-image: repeating-linear-gradient(90deg, rgba(60, 35, 5, 0.07) 0 3px, transparent 3px 11px);
+}
 .steel { background-color: var(--steel); background-image: radial-gradient(#b9c0c9 1.5px, transparent 1.8px); background-size: 22px 22px; }
 .slate {
   background-color: var(--slate); color: #f1efe9; --muted: #b4b8c0; --pen: #9cc7ff;
@@ -217,7 +221,7 @@ html.motion .hero-next { display: flex; opacity: 0; }
 @media (max-height: 600px) { .scroll-cue { display: none; } }
 
 /* ---------- 01 Origin ---------- */
-.origin-text { font-size: clamp(1.1rem, min(2.2vw, 3.4vh), 1.75rem); line-height: 1.45; font-weight: 600; margin: 18px 0 32px; max-width: 32em; }
+.origin-text { font-family: var(--hand); font-size: clamp(1.05rem, min(2vw, 3.1vh), 1.6rem); line-height: 1.55; font-weight: 400; margin: 18px 0 32px; max-width: 34em; }
 html.motion .origin-text .w { opacity: 0.18; }
 /* The closing line: its own line, marker type, orange underline that draws in */
 .origin-hl-line { display: block; margin-top: 0.6em; }
@@ -289,7 +293,27 @@ html.motion .work-rail {
   .art-desk .doodle { max-width: 190px; }
 }
 
-/* ---------- 03 Projects ---------- */
+/* ---------- 03 Side hustle ---------- */
+.cardboard .eyebrow { color: var(--ink); border-color: var(--ink); }
+.hustle-brand { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin: 6px 0 2px; }
+.hustle-name { font-family: var(--marker); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1; }
+.hustle-role {
+  font-family: var(--hand); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;
+  background: var(--ink); color: #fff; padding: 5px 10px; transform: rotate(-3deg);
+}
+.hustle-tagline { font-family: var(--hand); font-size: clamp(1.1rem, 1.8vw, 1.4rem); color: #3d5a1e; margin-bottom: 14px; }
+.hustle-text { max-width: 46ch; margin-bottom: 10px; }
+.hustle-built { color: var(--muted); }
+.hustle-stack { margin: 14px 0 22px; }
+.hustle-link { display: inline-block; }
+.art-shop .doodle { max-width: 360px; }
+.art-shop .note { margin: 6px auto 0; text-align: center; }
+@media (max-width: 860px) {
+  .art-shop { order: -1; }
+  .art-shop .doodle { max-width: 220px; }
+}
+
+/* ---------- 04 Projects ---------- */
 #projects, #hobbies { overflow: hidden; }
 .projects-layout { display: grid; grid-template-columns: 1fr; gap: 28px; }
 .deck-list { display: none; }

@@ -23,6 +23,7 @@
     bike: () => Doo.bike(L),
     peek: () => Doo.peek(L),
     plane: () => Doo.plane(),
+    shop: () => Doo.shop(),
   };
   $$("[data-scene]").forEach((el) => (el.innerHTML = scenes[el.dataset.scene]?.() ?? ""));
   $$("[data-doodle]").forEach((el) => (el.innerHTML = Doo.deco(el.dataset.doodle)));
@@ -69,6 +70,17 @@
       )
       .join("")
   );
+
+  const H = D.sideHustle;
+  if (H) {
+    $(".hustle-name").textContent = H.name;
+    $(".hustle-role").textContent = H.role;
+    $(".hustle-tagline").textContent = `“${H.tagline}”`;
+    $(".hustle-text").innerHTML = H.text;
+    $(".hustle-built").innerHTML = H.built;
+    $(".hustle-stack").innerHTML = chips(H.stack);
+    Object.assign($(".hustle-link"), { href: H.link.url, textContent: H.link.label });
+  } else $("#hustle").remove();
 
   $(".deck-list").innerHTML = D.projects
     .map((p, i) => `<li><span class="n">#${i + 1}</span><span>${p.title}</span><i class="bar"><i class="fill"></i></i></li>`)
@@ -209,6 +221,16 @@
   // "Write in" helpers: margin notes, highlighter swipes.
   const onEnter = (el, fn, start = "top 82%") => ScrollTrigger.create({ trigger: el, start, once: true, onEnter: fn });
   const mark = (el) => onEnter(el, () => el.classList.add("on"));
+  // Fade/slide elements in as they enter; "on" also triggers their draw-in CSS (underlines, ticks, notes).
+  const reveal = (sel) =>
+    ScrollTrigger.batch(sel, {
+      start: "top 88%",
+      once: true,
+      onEnter: (b) => {
+        gsap.to(b, { opacity: 1, y: 0, stagger: 0.08, duration: 0.9, ease: "power3.out" });
+        b.forEach((el, i) => setTimeout(() => el.classList.add("on"), 150 + i * 80));
+      },
+    });
 
   // Prologue: intro, then the yellow blob behind you swallows the page and becomes Chapter 01.
   gsap.from(".hero-line > span", { yPercent: 110, duration: 1.1, ease: "power4.out", stagger: 0.1, delay: 0.15 });
@@ -265,7 +287,10 @@
     .to(".work-progress", { scaleX: 1, ease: "none" }, 0)
     .to(".pencil", { x: () => rail.offsetWidth, ease: "none" }, 0);
 
-  // 03 Projects: deal the deck, then flip each card and toss it aside.
+  // 03 Side hustle
+  reveal("#hustle .reveal");
+
+  // 04 Projects: deal the deck, then flip each card and toss it aside.
   const cards = $$(".card");
   const fills = $$(".deck-list .fill");
   gsap.set(cards, { rotation: (i) => [-3, 2, -1.5, 3, -2][i % 5], zIndex: (i) => cards.length - i });
@@ -293,15 +318,6 @@
       scrollTrigger: { trigger: el, start: "top 85%", once: true },
     });
   });
-  const reveal = (sel) =>
-    ScrollTrigger.batch(sel, {
-      start: "top 88%",
-      once: true,
-      onEnter: (b) => {
-        gsap.to(b, { opacity: 1, y: 0, stagger: 0.08, duration: 0.9, ease: "power3.out" });
-        b.forEach((el, i) => setTimeout(() => el.classList.add("on"), 150 + i * 80));
-      },
-    });
   reveal("#achievements .reveal");
 
   // 05 Hobbies: polaroids get tossed onto the table while you cycle past.

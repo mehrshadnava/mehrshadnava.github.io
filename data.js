@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
   name: "Mehrshad Nava",
   initials: "MN",
-  role: "Product Associate at Yotta & full-stack developer",
+  role: "Product Associate at Yotta by day, programmer by night",
   tagline: "I build efficient, scalable web apps with React, Node.js, MongoDB and APIs, co-founded a herbal hair-colour brand, and I'm always learning. This is the story so far.",
   email: "", // leave empty to send the "Say hi" buttons to LinkedIn instead
 
@@ -39,6 +39,7 @@ window.PORTFOLIO = {
     work: "coffee count: classified ☕",
     projects: "#5 exists because the projector's remote was terrible",
     achievements: "SIH taught me how long 24 hours really is",
+    hustle: "the night shift, literally",
     hobbies: "leg day is not optional",
     contact: "I reply faster than my CI pipeline",
   },
@@ -76,14 +77,6 @@ window.PORTFOLIO = {
       stack: ["Cloud", "Product", "TypeScript", "React"],
     },
     {
-      period: "Side venture",
-      role: "Co-founder",
-      company: "AyurKesha · ayurkesha.com",
-      summary: "An Indian herbal hair-colour brand: henna blended with eight Ayurvedic herbs. “From leaves, not from labs.”",
-      highlights: ["Co-founded the brand and its online store"],
-      stack: ["E-commerce", "D2C", "Branding"],
-    },
-    {
       period: "Feb 2026 — Jul 2026",
       role: "Intern",
       company: "Godrej & Boyce Mfg. Co.",
@@ -113,7 +106,19 @@ window.PORTFOLIO = {
     },
   ],
 
-  // Chapter 03 — Projects: each becomes a card that flips. color = sticky-note colour.
+  // Chapter 03 — Side hustle
+  sideHustle: {
+    name: "AyurKesha",
+    role: "Co-founder",
+    tagline: "From leaves, not from labs.",
+    text: "An Indian herbal hair-colour brand: henna blended with eight Ayurvedic herbs, including Amla, Bhringraj, Shikakai and Brahmi, that covers grey while conditioning the scalp.",
+    built:
+      "I also built the store itself: storefront, checkout, order management, Razorpay payments and refunds, Shiprocket shipping with live tracking, and GST invoices, all in one Next.js app.",
+    stack: ["Next.js", "Postgres", "Razorpay", "Shiprocket"],
+    link: { label: "Visit ayurkesha.com ↗", url: "https://ayurkesha.com" },
+  },
+
+  // Chapter 04 — Projects: each becomes a card that flips. color = sticky-note colour.
   projects: [
     {
       title: "Little Stitch Studio",
@@ -190,6 +195,6 @@ window.PORTFOLIO = {
   // Chapter 06 — Epilogue
   contact: {
     heading: "Let's write the next chapter together.",
-    text: "I'm open to new roles, freelance projects, and good conversations about code.",
+    text: "I'm open to new roles, freelance projects, and good conversations about bikes.",
   },
 };

@@ -137,6 +137,28 @@ window.Doodles = (() => {
     );
   };
 
+  // An open shipping box of herbal sachets and leaves (side hustle).
+  const shop = () => {
+    const leaf = (x, y, r, c = "#7a9a3a") =>
+      `<g transform="translate(${x} ${y}) rotate(${r})"><path d="M0 0 q16 -18 34 0 q-18 16 -34 0z" fill="${c}"/><path d="M2 0 h28" stroke-width="2"/></g>`;
+    const sachet = (x, y, r, c) =>
+      `<g transform="rotate(${r} ${x + 26} ${y + 40})"><rect x="${x}" y="${y}" width="52" height="82" rx="6" fill="${c}"/><path d="M${x} ${y + 10} h52" stroke-width="2"/><rect x="${x + 8}" y="${y + 24}" width="36" height="30" rx="3" fill="#fff"/><text x="${x + 26}" y="${y + 45}" text-anchor="middle" font-family="Permanent Marker, Impact, sans-serif" font-size="15" fill="currentColor" stroke="none">AK</text></g>`;
+    return svg(
+      "0 0 260 230",
+      `<g filter="url(#wobble)">
+        ${sachet(70, 44, -10, "#6b7f3a")}${sachet(128, 36, 6, "#4f6b2c")}
+        ${leaf(36, 70, -30)}${leaf(186, 52, 20, "#5f8a2e")}${leaf(110, 30, -70, "#8aab45")}
+        <path d="M40 118 l-26 -30 h72 l14 30 z M220 118 l26 -30 h-72 l-14 30 z" fill="#c4a06a"/>
+        <path d="M40 118 h180 v96 h-180 z" fill="#d6bf98"/>
+        <path d="M118 118 h24 v96 h-24 z" fill="#b9bcc0" opacity=".85" stroke="none"/>
+        <rect x="62" y="150" width="136" height="38" rx="3" fill="#fff"/>
+        <text x="130" y="176" text-anchor="middle" font-family="Permanent Marker, Impact, sans-serif" font-size="18" fill="currentColor" stroke="none">AYURKESHA</text>
+        <path d="M54 200 l6 -10 l6 10 M206 200 l-6 -10 l-6 10" stroke-width="2.5"/>
+        <path d="M6 216 H254"/>
+      </g>`
+    );
+  };
+
   // Peeking over an edge.
   const peek = (L) =>
     svg(
@@ -183,5 +205,5 @@ window.Doodles = (() => {
     <filter id="boil"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="1" result="n"><animate attributeName="seed" values="1;2;3" dur="0.45s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter>
   </svg>`;
 
-  return { wave, laptop, trophy, bike, peek, plane, icon, deco, filters };
+  return { wave, laptop, trophy, bike, peek, plane, shop, icon, deco, filters };
 })();
